@@ -1,7 +1,9 @@
+const connection = require("../config/db");
+
 const handleGetHomePage = (req, res) => {
-  // TODO: process data
-  // TODO: call model
-  res.render("index.ejs");
+  connection.query("SELECT * FROM `Users`", function (err, results, fields) {
+    res.send(JSON.stringify(results, req));
+  });
 };
 
 module.exports = { handleGetHomePage };
