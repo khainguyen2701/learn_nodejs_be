@@ -7,6 +7,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host_name = process.env.HOST_NAME || "localhost";
 
+// config request body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); //for form
+
 // configuration template engine
 configViewEngine(app);
 
