@@ -8,22 +8,26 @@
   </head>
   <body>
     <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">News</a></li>
-      <li><a href="contact.asp">Contact</a></li>
-      <li><a href="about.asp">About</a></li>
+      <li><a href="/" active>Home</a></li>
+      <li><a href="/create">Create User</a></li>
     </ul>
-    <form action="/create-user" method="post">
-      <fieldset>
-        <legend>Personalia:</legend>
-        <label for="fname">Email:</label>
-        <input type="email" id="femail" name="femail" /><br /><br />
-        <label for="lname">Name:</label>
-        <input type="text" id="fname" name="fname" /><br /><br />
-        <label for="email">City:</label>
-        <input type="text" id="fcity" name="fcity" /><br /><br />
-        <input type="submit" value="Submit" />
-      </fieldset>
-    </form>
+    <h2>HTML Table</h2>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>City</th>
+      </tr>
+      <% users.forEach(function(user) { %>
+      <tr>
+        <td><%=user.id %></td>
+        <td><%=user.email %></td>
+        <td><%=user.name %></td>
+        <td><%=user.city %></td>
+      </tr>
+      <% }) %>
+    </table>
   </body>
 </html>
